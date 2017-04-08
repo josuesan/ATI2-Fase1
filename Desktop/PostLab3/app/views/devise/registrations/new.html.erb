@@ -6,40 +6,40 @@
       <%= devise_error_messages! %>
       <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <%= f.label :nombre, "Nombre" %><br />
-        <%= f.text_field :nombre, autofocus: true, class:"form-control field" %>
+        <%= f.text_field :nombre, autofocus: true, class:"form-control field", required: true %>
       </div>
       <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <%= f.label :genero, "Género" %><br />
-        <%= f.text_field :genero, autofocus: true, class:"form-control field" %>
+        <%= f.text_field :genero, autofocus: true, class:"form-control field", required: true %>
       </div>
 
       <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <%= f.label :nacimiento, "Fecha de Nacimiento" %><br/>
-        <%= f.date_select :nacimiento, autofocus: true, class:"form-control field" %>
+        <%= f.date_select :nacimiento, {order: [:month, :day, :year], prompt: { day: 'Día', month: 'Mes', year: 'Año' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, autofocus: true, class:"form-control field", required: true %>
       </div>
 
       <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <%= f.label :username, "Nombre de usuario" %><br />
-        <%= f.text_field :username, autofocus: true, class:"form-control field" %>
+        <%= f.text_field :username, autofocus: true, class:"form-control field", required: true %>
       </div>
 
 
       <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <%= f.label :email, "Email" %><br />
-        <%= f.email_field :email, autofocus: true, class:"form-control field" %>
+        <%= f.email_field :email, autofocus: true, class:"form-control field", required: true %>
       </div>
 
       <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <%= f.label :contraseña, "Contraseña" %>
+        <%= f.label :password, "Contraseña" %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> caracteres mínimos)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class:"form-control field"%>
+        <%= f.password_field :password, autocomplete: "off", class:"form-control field", required: true%>
       </div>
 
       <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control field" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control field",required: true %>
       </div>
 
       <div class="actions col-sm-12 col-md-12 col-lg-12">
