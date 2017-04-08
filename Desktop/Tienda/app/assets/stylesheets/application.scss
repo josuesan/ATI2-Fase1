@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+a {
+	text-decoration:none; 
+	color: white;
+	font-family: monospace;
+}
+a:hover {
+	text-decoration:none; 
+	color: black;
+	font-family: monospace;
+}
+
+h1{
+	text-align: center;
+}
+h2{
+	text-align: center;
+}
+body {
+	background-color: #4C8DE6;
+}
+
+tr:hover{
+	background-color: #00FFFF;
+}
+
+#Boton-form{
+	float: right;
+}
+
+td{
+	text-align: center;
+	font-size: 16px;
+}
+th{
+	text-align: center;
+	font-size: 16px;
+}
+p{
+	font-size: 16px;
+}
+button{
+	font-size: 16px;
+}
+label{
+	font-size: 20px;
+}
+
+

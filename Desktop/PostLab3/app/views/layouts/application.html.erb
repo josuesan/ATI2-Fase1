@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PostLab3</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">3J' STORE</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active">
+            <%= link_to "Inicio", root_path%>
+        </li>
+        <% if user_signed_in? %>
+            <li>
+              <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Registrarse", new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "Iniciar sesión", new_user_session_path %>
+            </li>
+          <% end %>
+      </ul>
+    </div>
+  </nav>
+  </header>
+    <%= yield %>
+     <p class="notice"><%= notice %></p>
+ 	 <p class="alert"><%= alert %></p>
+  </body>
+</html>

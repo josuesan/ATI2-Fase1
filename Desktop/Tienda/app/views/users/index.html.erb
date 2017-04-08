@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <h1>Users</h1>
+  </div>
+  <div class="row">
+    <div class="table-responsive"> 
+      <table class="table  table-bordered">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Genero</th>
+            <th>Nacimiento</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.nombre %></td>
+              <td><%= user.genero %></td>
+              <td><%= user.nacimiento %></td>
+              <td><%= user.username %></td>
+              <td><%= user.password %></td>
+              <td>
+                <button class="btn btn-warning"> <%= link_to 'Show', user %></button> 
+                <button class="btn btn-warning"> <%= link_to 'Edit', edit_user_path(user) %> </button>
+                <button class="btn btn-warning"> <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %> </button> 
+              </td>
+            </tr>  
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn btn-warning"> <%= link_to 'New User', new_user_path %> </button>
+  </div>
+</div>
+
